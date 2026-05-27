@@ -1,171 +1,913 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boy — Web & AI Developer</title>
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{
-            font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-            background:#0a0a0f;color:#e0e0e0;line-height:1.6;
-        }
-        nav{
-            position:fixed;top:0;width:100%;z-index:100;
-            background:rgba(10,10,15,0.85);backdrop-filter:blur(12px);
-            border-bottom:1px solid #1a1a2e;
-            padding:16px 32px;display:flex;justify-content:space-between;align-items:center;
-        }
-        nav .logo{font-size:22px;font-weight:700;color:#6c63ff;letter-spacing:-0.5px}
-        nav .links{display:flex;gap:28px}
-        nav .links a{color:#888;text-decoration:none;font-size:14px;transition:color .2s}
-        nav .links a:hover{color:#6c63ff}
-        .hero{
-            min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
-            padding:120px 24px 80px;
-            background:radial-gradient(ellipse at top,#12102a 0%,#0a0a0f 70%);
-        }
-        .hero h1{font-size:52px;font-weight:800;margin-bottom:12px;letter-spacing:-1px}
-        .hero h1 span{color:#6c63ff}
-        .hero .sub{color:#666;font-size:18px;max-width:520px;margin:0 auto 36px}
-        .hero .meta{color:#484f58;font-size:13px;margin-bottom:24px}
-        .hero .meta span{margin:0 12px}
-        .btn-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-        .btn{
-            padding:14px 36px;border-radius:10px;font-size:15px;font-weight:600;
-            text-decoration:none;transition:all .2s;border:none;cursor:pointer;display:inline-block;
-        }
-        .btn-primary{background:#6c63ff;color:#fff}
-        .btn-primary:hover{background:#5a52e0;transform:translateY(-2px)}
-        .btn-outline{background:transparent;color:#6c63ff;border:2px solid #6c63ff}
-        .btn-outline:hover{background:#6c63ff12;transform:translateY(-2px)}
-        section{padding:80px 24px;max-width:960px;margin:0 auto}
-        section h2{font-size:28px;margin-bottom:12px;text-align:center}
-        section h2 span{color:#6c63ff}
-        section .section-sub{text-align:center;color:#666;font-size:15px;margin-bottom:48px;max-width:500px;margin-left:auto;margin-right:auto}
-        .work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-        .work-card{
-            background:#12101e;border:1px solid #1a1a2e;border-radius:12px;
-            padding:24px;transition:all .2s;
-        }
-        .work-card:hover{border-color:#6c63ff;transform:translateY(-3px)}
-        .work-card .label{
-            display:inline-block;background:#6c63ff12;color:#6c63ff;
-            padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;margin-bottom:10px;
-        }
-        .work-card h3{font-size:18px;margin-bottom:6px}
-        .work-card p{color:#888;font-size:14px;margin-bottom:14px}
-        .work-card .stack{display:flex;flex-wrap:wrap;gap:6px}
-        .work-card .stack span{
-            background:#1a1a2e;padding:3px 10px;border-radius:4px;font-size:12px;color:#999;
-        }
-        .about-text{color:#888;font-size:15px;max-width:600px;margin:0 auto 40px;text-align:center;line-height:1.8}
-        .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:40px}
-        .stat-box{background:#12101e;border:1px solid #1a1a2e;border-radius:10px;padding:24px;text-align:center}
-        .stat-box .num{font-size:28px;font-weight:700;color:#6c63ff}
-        .stat-box .lbl{color:#888;font-size:13px;margin-top:4px}
-        #contact{text-align:center}
-        #contact p{color:#888;margin:0 auto 28px;max-width:450px}
-        #contact .email-link{color:#6c63ff;text-decoration:none;font-size:18px;font-weight:600}
-        #contact .email-link:hover{text-decoration:underline}
-        footer{text-align:center;padding:32px;color:#333;font-size:13px;border-top:1px solid #1a1a2e;margin-top:40px}
-        .whatsapp-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:14px 36px;border-radius:10px;text-decoration:none;font-weight:600;margin-top:16px}
-        .whatsapp-btn:hover{background:#20bd5a;transform:translateY(-2px)}
-        @media(max-width:640px){
-            .hero h1{font-size:32px}
-            nav .links{display:none}
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marva — Informatics Student & Automation Developer</title>
+<meta name="description" content="Portfolio of Marva — Informatics Student & Automation Developer from Lombok, Indonesia. Python, AI/LLMs, web scraping, and crypto trading automation." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0f172a;
+    --bg-elev: #111c33;
+    --bg-card: #152038;
+    --border: #1f2b48;
+    --border-strong: #2a3a60;
+    --text: #e2e8f0;
+    --text-dim: #94a3b8;
+    --text-muted: #64748b;
+    --accent: #38bdf8;
+    --accent-2: #818cf8;
+    --accent-soft: rgba(56, 189, 248, 0.12);
+    --success: #34d399;
+    --radius: 12px;
+    --radius-lg: 16px;
+    --maxw: 1120px;
+    --nav-h: 68px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  button { font: inherit; cursor: pointer; }
+
+  .container {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- NAV ---------- */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--nav-h);
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+  }
+  .nav-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+  }
+  .brand .dot { color: var(--accent); }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--text-dim);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    position: relative;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -6px;
+    width: 0; height: 2px;
+    background: var(--accent);
+    transition: width 0.25s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+    padding: 8px 10px;
+    border-radius: 8px;
+  }
+
+  /* ---------- SECTION BASE ---------- */
+  section {
+    padding: 96px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  section:last-of-type { border-bottom: none; }
+
+  .section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .section-heading {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+  .section-sub {
+    color: var(--text-dim);
+    font-size: 16px;
+    max-width: 640px;
+    margin-bottom: 56px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    min-height: 100vh;
+    padding-top: calc(var(--nav-h) + 32px);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--text-dim);
+    width: fit-content;
+    background: var(--bg-elev);
+  }
+  .hero-eyebrow .pulse {
+    width: 8px; height: 8px;
+    background: var(--success);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55); }
+    70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+  }
+  .hero h1 {
+    font-size: clamp(40px, 7vw, 72px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+  }
+  .hero h1 .grad {
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero-role {
+    font-size: clamp(18px, 2.4vw, 22px);
+    color: var(--text-dim);
+    font-weight: 500;
+    margin-top: 4px;
+  }
+  .hero-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-top: 8px;
+  }
+  .hero-cta {
+    display: flex;
+    gap: 14px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+    border: 1px solid transparent;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #0b1220;
+  }
+  .btn-primary:hover { background: #7dd3fc; transform: translateY(-1px); }
+  .btn-ghost {
+    background: transparent;
+    border-color: var(--border-strong);
+    color: var(--text);
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-meta {
+    display: flex;
+    gap: 28px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+  .hero-meta div span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+  }
+  .hero-meta div strong {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .about-text p {
+    color: var(--text-dim);
+    margin-bottom: 18px;
+    font-size: 16px;
+  }
+  .about-text p strong { color: var(--text); }
+  .motto {
+    margin-top: 24px;
+    padding: 20px 24px;
+    background: var(--bg-card);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-style: italic;
+    color: var(--text);
+    font-size: 17px;
+  }
+  .motto::before { content: '"'; color: var(--accent); margin-right: 4px; font-size: 22px; }
+  .motto::after { content: '"'; color: var(--accent); margin-left: 2px; font-size: 22px; }
+
+  .about-facts {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+  }
+  .about-facts h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .fact-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .fact-row:last-child { border-bottom: none; }
+  .fact-row span:first-child { color: var(--text-muted); }
+  .fact-row span:last-child { color: var(--text); font-weight: 500; }
+
+  /* ---------- EXPERIENCE TIMELINE ---------- */
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 8px; bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--border-strong));
+  }
+  .tl-item {
+    position: relative;
+    padding-bottom: 36px;
+  }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -28px; top: 6px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
+  }
+  .tl-period {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+  }
+  .tl-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .tl-desc {
+    color: var(--text-dim);
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .tl-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    padding: 4px 10px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .skill-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+  .skill-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    background: var(--bg-elev);
+  }
+  .skill-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: grid;
+    place-items: center;
+    margin-bottom: 16px;
+    font-size: 22px;
+  }
+  .skill-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .skill-card p {
+    color: var(--text-dim);
+    font-size: 14px;
+  }
+
+  /* ---------- PROJECTS ---------- */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+  }
+  .project-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .project-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    color: #0b1220;
+    font-weight: 800;
+  }
+  .project-link {
+    color: var(--text-muted);
+    font-size: 18px;
+    transition: color 0.2s ease;
+  }
+  .project-link:hover { color: var(--accent); }
+  .project-card h3 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .project-card p {
+    color: var(--text-dim);
+    font-size: 14.5px;
+    flex-grow: 1;
+    margin-bottom: 18px;
+  }
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .project-tags .tag {
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    color: var(--text-dim);
+    font-size: 11.5px;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 48px;
+  }
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color 0.2s ease, transform 0.15s ease;
+  }
+  .contact-item:hover {
+    border-color: var(--accent);
+    transform: translateX(4px);
+  }
+  .contact-item .ci-icon {
+    width: 44px; height: 44px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+  }
+  .contact-item .ci-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .contact-item .ci-value {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .contact-form {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+  }
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+  .form-row label {
+    font-size: 13px;
+    color: var(--text-dim);
+    font-weight: 500;
+  }
+  .form-row input,
+  .form-row textarea {
+    background: var(--bg);
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+    padding: 12px 14px;
+    border-radius: 10px;
+    font: inherit;
+    font-size: 14.5px;
+    transition: border-color 0.15s ease, background 0.15s ease;
+    width: 100%;
+    resize: vertical;
+  }
+  .form-row input:focus,
+  .form-row textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: var(--bg-elev);
+  }
+  .form-row textarea { min-height: 130px; }
+  .form-status {
+    font-size: 13px;
+    color: var(--success);
+    min-height: 18px;
+    margin-top: 4px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 36px 0;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-inner a:hover { color: var(--accent); }
+
+  /* ---------- REVEAL ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px) {
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .projects-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    section { padding: 72px 0; }
+    .nav-links { display: none; }
+    .nav-toggle { display: inline-block; }
+    .nav-links.open {
+      display: flex;
+      position: absolute;
+      top: var(--nav-h);
+      left: 0; right: 0;
+      flex-direction: column;
+      padding: 18px 24px;
+      background: var(--bg-elev);
+      border-bottom: 1px solid var(--border);
+      gap: 16px;
+    }
+    .skills-grid { grid-template-columns: 1fr; }
+    .hero-meta { gap: 20px; }
+  }
+</style>
 </head>
 <body>
-<nav>
-    <div class="logo">Boy</div>
-    <div class="links">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#hero" class="brand">marva<span class="dot">.</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 </nav>
 
-<section class="hero">
-    <div>
-        <h1>Hey, I'm <span>Boy</span></h1>
-        <p class="sub">I build websites, automate things with AI, and set up servers that actually work.</p>
-        <p class="meta">Web Dev <span>·</span> AI Automation <span>·</span> IT Infrastructure</p>
-        <div class="btn-group">
-            <a href="#work" class="btn btn-primary">See My Work</a>
-            <a href="#contact" class="btn btn-outline">Hit Me Up</a>
-        </div>
+<!-- HERO -->
+<header id="hero" class="hero">
+  <div class="container hero-grid">
+    <span class="hero-eyebrow reveal"><span class="pulse"></span> Available for freelance & collaboration</span>
+    <h1 class="reveal">
+      Marva
+    </h1>
+    <p class="hero-role reveal">Informatics Student & Automation Developer</p>
+    <p class="hero-location reveal">📍 Lombok, Indonesia</p>
+    <div class="hero-cta reveal">
+      <a class="btn btn-primary" href="#projects">View Projects →</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
     </div>
-</section>
-
-<section id="work">
-    <h2>Stuff I've <span>Built</span></h2>
-    <p class="section-sub">Real projects, real results. From trading bots to dashboards.</p>
-    <div class="work-grid">
-        <div class="work-card">
-            <div class="label">Web App</div>
-            <h3>AI Trading Dashboard</h3>
-            <p>Live dashboard that tracks multiple AI agents analyzing stocks in real-time. Built with Python + DeepSeek.</p>
-            <div class="stack"><span>Python</span><span>DeepSeek</span><span>HTML/CSS/JS</span><span>API</span></div>
-        </div>
-        <div class="work-card">
-            <div class="label">Automation</div>
-            <h3>Crypto Auto-Trader</h3>
-            <p>24/7 bot that scans 30+ coins, analyzes RSI/trends, and executes trades automatically on Indodax.</p>
-            <div class="stack"><span>Python</span><span>yFinance</span><span>API</span><span>Bot</span></div>
-        </div>
-        <div class="work-card">
-            <div class="label">Infra</div>
-            <h3>Server & Network Config</h3>
-            <p>Full setup: firewall, domain, SSL, reverse proxy, VPN — production-ready infrastructure.</p>
-            <div class="stack"><span>Linux</span><span>Nginx</span><span>DNS</span><span>Tailscale</span></div>
-        </div>
-        <div class="work-card">
-            <div class="label">AI</div>
-            <h3>AI Assistant Integration</h3>
-            <p>Custom AI chatbot with document retrieval, deployed via API with multiple LLM providers.</p>
-            <div class="stack"><span>LLM</span><span>Python</span><span>RAG</span><span>API</span></div>
-        </div>
+    <div class="hero-meta reveal">
+      <div><span>Focus</span><strong>Automation</strong></div>
+      <div><span>Stack</span><strong>Python · LLMs</strong></div>
+      <div><span>Status</span><strong>Open to work</strong></div>
     </div>
-</section>
+  </div>
+</header>
 
+<!-- ABOUT -->
 <section id="about">
-    <h2>A Bit <span>About Me</span></h2>
-    <div class="about-text">
-        I'm a developer from Indonesia. I got into coding because I wanted to build things that actually make money — trading bots, automation tools, AI systems. Now I help other people build their stuff too.
-        <br><br>
-        I use AI tools to work fast, so you get quality results without the wait. I'm honest about what I can do, and I don't ghost clients.
+  <div class="container">
+    <p class="section-title reveal">01 — About</p>
+    <h2 class="section-heading reveal">Building tools that do the boring work.</h2>
+    <p class="section-sub reveal">I turn repetitive tasks into automated systems. Bots, scrapers, AI agents — if it can be automated, I've built it.</p>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm an <strong>Informatics student</strong> from Lombok, Indonesia, focused on building practical automation — from <strong>trading bots</strong> that watch the markets while I sleep, to <strong>AI agents</strong> that handle the workflow grind, to <strong>scrapers</strong> that pull clean data from messy sources.</p>
+        <p>My goal is simple: write code once, let it run forever. I care about reliability, clean output, and shipping things that actually save time. When something can be automated, I'd rather build the system than do the task twice.</p>
+        <p>Outside the keyboard, I'm probably watching the crypto charts, testing a new model, or sketching the next idea.</p>
+
+      </div>
+      <aside class="about-facts reveal">
+        <h3>Quick facts</h3>
+        <div class="fact-row"><span>Location</span><span>Lombok, Indonesia</span></div>
+        <div class="fact-row"><span>Studying</span><span>Informatics</span></div>
+        <div class="fact-row"><span>Main stack</span><span>Python</span></div>
+        <div class="fact-row"><span>Focus areas</span><span>Bots · AI · Scraping</span></div>
+        <div class="fact-row"><span>Languages</span><span>EN · ID</span></div>
+        <div class="fact-row"><span>Availability</span><span>Open to work</span></div>
+      </aside>
     </div>
-    <div class="grid-3">
-        <div class="stat-box"><div class="num">3+</div><div class="lbl">Projects Built</div></div>
-        <div class="stat-box"><div class="num">24h</div><div class="lbl">Response Time</div></div>
-        <div class="stat-box"><div class="num">100%</div><div class="lbl">Client Sat (so far!)</div></div>
-    </div>
+  </div>
 </section>
 
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="section-title reveal">02 — Experience</p>
+    <h2 class="section-heading reveal">A path of building & shipping.</h2>
+    <p class="section-sub reveal">Selected work — automation systems, AI tooling, and data extraction projects I've built and operated end to end.</p>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-period">2024 — Present</div>
+        <h3 class="tl-title">Auto-Trading Bot Developer</h3>
+        <p class="tl-desc">Designed and run automated crypto trading bots with risk controls, signal logic, and exchange API integration. Focus on uptime, position safety, and clean P&L tracking.</p>
+        <div class="tl-tags">
+          <span class="tag">Python</span>
+          <span class="tag">CCXT</span>
+          <span class="tag">REST/WS APIs</span>
+          <span class="tag">Backtesting</span>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-period">2024 — Present</div>
+        <h3 class="tl-title">AI Agent Builder</h3>
+        <p class="tl-desc">Built LLM-powered agents that orchestrate multi-step workflows — research, summarization, content generation, and tool use. Familiar with prompt design, function calling, and context management.</p>
+        <div class="tl-tags">
+          <span class="tag">LLMs</span>
+          <span class="tag">Anthropic API</span>
+          <span class="tag">Tool use</span>
+          <span class="tag">Prompt engineering</span>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-period">2023 — Present</div>
+        <h3 class="tl-title">Web Scraper Specialist</h3>
+        <p class="tl-desc">Built scrapers that handle JS-rendered pages, anti-bot defenses, pagination, and rate limits. Output is normalized, deduplicated, and ready for downstream pipelines or analysis.</p>
+        <div class="tl-tags">
+          <span class="tag">Playwright</span>
+          <span class="tag">Selenium</span>
+          <span class="tag">BeautifulSoup</span>
+          <span class="tag">Proxies</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="section-title reveal">03 — Skills</p>
+    <h2 class="section-heading reveal">Tools I use to ship.</h2>
+    <p class="section-sub reveal">Services you can hire me for — built on real project experience, ready for yours.</p>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-icon">🐍</div>
+        <h3>Python Automation</h3>
+        <p>Web scraping, file processing, API integration, data cleaning. From messy input to clean output.</p>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🌐</div>
+        <h3>Web Development</h3>
+        <p>Landing pages, dashboards, email templates. HTML/CSS/JS — responsive, clean, fast delivery.</p>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🕸️</div>
+        <h3>Web Scraping</h3>
+        <p>Data extraction from any site — pagination, JS-rendered, anti-bot. Output to CSV/JSON/Sheets.</p>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">📊</div>
+        <h3>Data Processing</h3>
+        <p>Format conversion, price monitoring, competitor tracking. Structured output ready to use.</p>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🤖</div>
+        <h3>AI & LLMs</h3>
+        <p>Prompt engineering, multi-agent systems, API integration. Agents that do real work, not just chat.</p>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">📝</div>
+        <h3>Writing & Translation</h3>
+        <p>English ↔ Indonesian, technical docs, copywriting. Clear, accurate, native-quality output.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <p class="section-title reveal">04 — Projects</p>
+    <h2 class="section-heading reveal">Selected work.</h2>
+    <p class="section-sub reveal">Services I offer — each one solves a real business need, not a toy demo.</p>
+    <div class="projects-grid">
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon">P</div>
+        </div>
+        <h3>Python Automation & Scripting</h3>
+        <p>Need a repetitive task automated? I build scripts that handle web scraping, file processing (CSV/JSON/PDF), API integrations, and data cleaning. Set it once, let it run forever.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Playwright</span>
+          <span class="tag">API</span>
+          <span class="tag">ETL</span>
+        </div>
+      </article>
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon">S</div>
+        </div>
+        <h3>Web Scraping & Data Extraction</h3>
+        <p>Extract data from any website — handle pagination, JS rendering, and anti-bot protection. Output in your preferred format (CSV, JSON, or direct to Google Sheets).</p>
+        <div class="project-tags">
+          <span class="tag">Playwright</span>
+          <span class="tag">BS4</span>
+          <span class="tag">Scraping</span>
+          <span class="tag">Google Sheets</span>
+        </div>
+      </article>
+      <article class="project-card reveal">
+        <div class="project-head">
+          <div class="project-icon">W</div>
+        </div>
+        <h3>Web Dev & Landing Pages</h3>
+        <p>Fast, responsive websites and landing pages. From design to deployment — no bloat, just clean code that loads fast and looks great on any device.</p>
+        <div class="project-tags">
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Responsive</span>
+          <span class="tag">Streamlit</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
-    <h2>Let's <span>Talk</span></h2>
-    <p>Got a project? Need a website, bot, or server setup? Send me a message and let's figure it out.</p>
-    <p style="margin-bottom:16px">
-        <a href="mailto:fatwagraha06039@gmail.com" class="email-link">fatwagraha06039@gmail.com</a>
-    </p>
-    <p>
-        <a href="https://wa.me/6285337055599?text=Halo%20Boy%2C%20saya%20tertarik%20dengan%20project%20yang%20bisa%20kamu%20bantu." style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:14px 36px;border-radius:10px;text-decoration:none;font-weight:600;font-size:16px">WhatsApp Me</a>
-    </p>
+  <div class="container">
+    <p class="section-title reveal">05 — Contact</p>
+    <h2 class="section-heading reveal">Let's build something.</h2>
+    <p class="section-sub reveal">Open to freelance work, collaboration, and interesting ideas. Reach out — I usually reply within a day.</p>
+    <div class="contact-grid">
+      <div class="contact-list">
+        <a class="contact-item reveal" href="mailto:fatwagraha06039@gmail.com">
+          <div class="ci-icon">✉</div>
+          <div>
+            <div class="ci-label">Email</div>
+            <div class="ci-value">fatwagraha06039@gmail.com</div>
+          </div>
+        </a>
+        <a class="contact-item reveal" href="https://wa.me/6285337055599" target="_blank" rel="noopener">
+          <div class="ci-icon">💬</div>
+          <div>
+            <div class="ci-label">WhatsApp</div>
+            <div class="ci-value">+62 853-3705-5599</div>
+          </div>
+        </a>
+        <a class="contact-item reveal" href="https://github.com/fatwagraha06039-cyber" target="_blank" rel="noopener">
+          <div class="ci-icon">⌨</div>
+          <div>
+            <div class="ci-label">GitHub</div>
+            <div class="ci-value">fatwagraha06039-cyber</div>
+          </div>
+        </a>
+      </div>
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="form-row">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" required placeholder="Your name" />
+        </div>
+        <div class="form-row">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" required placeholder="you@example.com" />
+        </div>
+        <div class="form-row">
+          <label for="cf-msg">Message</label>
+          <textarea id="cf-msg" name="message" required placeholder="Tell me about your project..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message →</button>
+        <div class="form-status" id="formStatus" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
 </section>
 
-<footer>© 2026 Boy — Built with coffee, code, and AI.</footer>
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> Marva. Built with code & coffee in Lombok.</div>
+    <div>
+      <a href="mailto:fatwagraha06039@gmail.com">Email</a> ·
+      <a href="https://github.com/fatwagraha06039-cyber" target="_blank" rel="noopener">GitHub</a> ·
+      <a href="https://wa.me/6285337055599" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</footer>
 
 <script>
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-            e.preventDefault();
-            const t = document.querySelector(a.getAttribute('href'));
-            if(t) t.scrollIntoView({behavior:'smooth'});
-        });
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.addEventListener('click', e => {
+    if (e.target.tagName === 'A') links.classList.remove('open');
+  });
+
+  // Intersection Observer scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        io.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Contact form (client-side only — opens mail client)
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+    if (!name || !email || !message) {
+      status.style.color = '#f87171';
+      status.textContent = 'Please fill out every field.';
+      return;
+    }
+    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
+    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    window.location.href = `mailto:fatwagraha06039@gmail.com?subject=${subject}&body=${body}`;
+    status.style.color = '#34d399';
+    status.textContent = 'Opening your email client...';
+    form.reset();
+  });
 </script>
+
 </body>
 </html>
